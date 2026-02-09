@@ -5,8 +5,11 @@ import { Navbar } from "@/components/ui/navbar";
 import { Button } from "@/components/ui/button";
 import { IconButton } from "@/components/ui/icon-button";
 import { Hamburger } from "@/components/ui/hamburger";
-import { FiSun, FiMoon } from "react-icons/fi";
+import { FiSun, FiMoon, FiGithub, FiLinkedin } from "react-icons/fi";
 import { useEffect, useState } from "react";
+
+const GITHUB_URL = "https://github.com/a-smiggle";
+const LINKEDIN_URL = "https://www.linkedin.com/in/anthonysmigielski/";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,6 +75,24 @@ export default function RootLayout({
                 <Button asChild variant="ghost" size="sm">
                   <a href="#portfolio">Portfolio</a>
                 </Button>
+                <a
+                  href={GITHUB_URL}
+                  aria-label="Open GitHub profile"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-transparent hover:bg-accent text-foreground dark:text-foreground"
+                >
+                  <FiGithub size={22} />
+                </a>
+                <a
+                  href={LINKEDIN_URL}
+                  aria-label="Open LinkedIn profile"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-transparent hover:bg-accent text-foreground dark:text-foreground"
+                >
+                  <FiLinkedin size={22} />
+                </a>
                 <IconButton
                   aria-label="Toggle dark mode"
                   icon={isDark ? <FiSun size={24} /> : <FiMoon size={24} />}
@@ -81,6 +102,24 @@ export default function RootLayout({
             </div>
             {/* Mobile Nav */}
             <div className="flex md:hidden flex-1 justify-end items-center gap-2">
+              <a
+                href={GITHUB_URL}
+                aria-label="Open GitHub profile"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-transparent hover:bg-accent text-foreground dark:text-foreground"
+              >
+                <FiGithub size={22} />
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                aria-label="Open LinkedIn profile"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-transparent hover:bg-accent text-foreground dark:text-foreground"
+              >
+                <FiLinkedin size={22} />
+              </a>
               <IconButton
                 aria-label="Toggle dark mode"
                 icon={isDark ? <FiSun size={24} /> : <FiMoon size={24} />}
