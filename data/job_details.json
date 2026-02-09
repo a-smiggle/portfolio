@@ -1,0 +1,32 @@
+[
+  {"job_id":"job-5","bullet":"Led development of analytics and reporting solutions to drive data‑informed decisions across surface mining operations."},
+  {"job_id":"job-5","bullet":"Designed enterprise data models; integrated SharePoint, SQL Server, and Power BI for governed, reusable datasets."},
+  {"job_id":"job-5","bullet":"Built and maintained Power BI dashboards and refresh pipelines for operational, safety, and production reporting."},
+  {"job_id":"job-5","bullet":"Implemented ETL processes consolidating multiple Fleet Management Systems into a central data warehouse."},
+  {"job_id":"job-5","bullet":"Partnered with engineers, site leadership, and corporate stakeholders to translate requirements into digital solutions."},
+  {"job_id":"job-5","bullet":"Established testing, validation, and QA practices to meet operational standards and data quality SLAs."},
+  {"job_id":"job-5","bullet":"Produced documentation and delivered end‑user training to support adoption and continuous improvement."},
+  {"job_id":"job-5","bullet":"Provided ongoing support and iterative enhancements aligned with structured change management."},
+
+
+  {"job_id":"job-2","bullet":"Developed web applications and dashboards (React/Angular/JS/HTML/CSS) for IoT and operations use‑cases."},
+  {"job_id":"job-2","bullet":"Built API‑driven integrations between embedded devices, cloud services, and business platforms."},
+  {"job_id":"job-2","bullet":"Implemented backend services and automation using Python and C# for ingestion and processing."},
+  {"job_id":"job-2","bullet":"Managed SQL databases for IoT platforms with a focus on integrity, performance, and scale."},
+  {"job_id":"job-2","bullet":"Set up CI/CD and maintained Azure infrastructure for reliable deployments and operations."},
+  {"job_id":"job-2","bullet":"Served as systems administrator for Azure, managing Linux VMs, certificates, and environment security."},
+  {"job_id":"job-2","bullet":"Collaborated with engineering, operations, and clients to deliver solutions aligned to business goals."},
+
+  {"job_id":"job-4","bullet":"Provided consulting support and maintenance for existing CoreIoT solutions after full‑time engagement."},
+  {"job_id":"job-4","bullet":"Implemented bug fixes, minor features, and deployments to meet client needs and SLAs."},
+  {"job_id":"job-4","bullet":"Advised on best practices for cloud, data, and application reliability in production."},
+  {"job_id":"job-4","bullet":"Supported Azure environment administration tasks including Linux VM management, certificate lifecycle, and access/security controls."},
+
+  {"job_id":"job-3","bullet":"Delivered a vibration analysis prototype on nRF9160 using Zephyr RTOS."},
+  {"job_id":"job-3","bullet":"Implemented low‑power data acquisition and on‑device processing for telemetry."},
+  {"job_id":"job-3","bullet":"Integrated cellular connectivity and cloud ingestion for remote monitoring."},
+
+  {"job_id":"job-1","bullet":"Supported enterprise IT systems in regulated, mission‑critical environments with high availability and security."},
+  {"job_id":"job-1","bullet":"Produced system documentation, delivered user training, and authored SOPs."},
+  {"job_id":"job-1","bullet":"Maintained virtualized server environments to ensure readiness and uptime."}
+]

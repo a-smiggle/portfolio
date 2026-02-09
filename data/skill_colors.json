@@ -1,0 +1,22 @@
+{
+  "Beginner": {
+    "fg": "#ef4444",
+    "border": "#dc2626",
+    "remainder": "rgba(148,163,184,0.25)"
+  },
+  "Intermediate": {
+    "fg": "#f59e0b",
+    "border": "#d97706",
+    "remainder": "rgba(148,163,184,0.25)"
+  },
+  "Advanced": {
+    "fg": "#3b82f6",
+    "border": "#2563eb",
+    "remainder": "rgba(148,163,184,0.25)"
+  },
+  "Expert": {
+    "fg": "#22c55e",
+    "border": "#16a34a",
+    "remainder": "rgba(148,163,184,0.25)"
+  }
+}

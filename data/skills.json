@@ -1,0 +1,27 @@
+[
+  {"skill":"Next.js","category":"Front End","level":"Advanced","score":75,"years":5,"keywords":"react,nextjs,ssr","details":"App Router, SSR/SSG, performance and SEO"},
+  {"skill":"React","category":"Front End","level":"Advanced","score":75,"years":6,"keywords":"react,spa","details":"Component architecture, hooks, state management"},
+  {"skill":"TypeScript","category":"Front End","level":"Advanced","score":75,"years":4,"keywords":"ts,types","details":"Type-safe APIs, generics, refactoring"},
+  {"skill":"Tailwind CSS","category":"Front End","level":"Advanced","score":75,"years":4,"keywords":"tailwind,utility-css","details":"Design systems, responsive UI, dark mode"},
+  {"skill":"shadcn/ui","category":"Front End","level":"Intermediate","score":50,"years":1,"keywords":"shadcn,radix","details":"Composable UI primitives, theming"},
+  {"skill":"HTML/CSS","category":"Front End","level":"Advanced","score":75,"years":7,"keywords":"html,css","details":"Semantic HTML, modern CSS, animations"},
+
+  {"skill":"Node.js","category":"Back End","level":"Advanced","score":75,"years":6,"keywords":"node,api","details":"REST APIs, auth, background jobs"},
+  {"skill":"PostgreSQL","category":"Back End","level":"Advanced","score":75,"years":5,"keywords":"postgres,sql","details":"Schema design, indexing, performance"},
+  {"skill":"Auth (JWT/OAuth)","category":"Back End","level":"Advanced","score":75,"years":5,"keywords":"auth,jwt,oauth","details":"Sessions, tokens, SSO"},
+  {"skill":"Python","category":"Back End","level":"Intermediate","score":50,"years":4,"keywords":"python,fastapi","details":"APIs, background tasks, tooling"},
+
+  {"skill":"Power BI","category":"Data Analytics","level":"Expert","score":95,"years":4,"keywords":"powerbi,dax","details":"Data modelling, DAX, dashboards"},
+  {"skill":"DAX","category":"Data Analytics","level":"Expert","score":95,"years":4,"keywords":"dax,measures","details":"Measures, calculated columns"},
+  {"skill":"SQL","category":"Data Analytics","level":"Advanced","score":75,"years":5,"keywords":"sql,queries","details":"Query tuning, window functions"},
+  {"skill":"Power Query","category":"Data Analytics","level":"Advanced","score":75,"years":4,"keywords":"power query,excel,transform","details":"ETL and data shaping in Excel/Power BI"},
+  {"skill":"Python","category":"Data Analytics","level":"Intermediate","score":50,"years":4,"keywords":"python,pandas","details":"Data wrangling, scripting"},
+  {"skill":"Pandas","category":"Data Analytics","level":"Intermediate","score":50,"years":3,"keywords":"pandas,dataframe","details":"ETL, transformations"},
+  {"skill":"Excel","category":"Data Analytics","level":"Advanced","score":75,"years":10,"keywords":"excel,formulas","details":"Pivot tables, advanced formulas"},
+
+  {"skill":"nRF SDK (nRF52)","category":"IoT","level":"Intermediate","score":50,"years":3,"keywords":"nrf52,nrf-sdk,embedded-c","details":"Firmware development on Nordic nRF52 using nRF SDK"},
+  {"skill":"Zephyr OS (nRF9160)","category":"IoT","level":"Intermediate","score":50,"years":2,"keywords":"zephyr,nrf9160,rtos","details":"Cellular IoT with Zephyr RTOS on nRF9160"},
+  {"skill":"Power Profiling (nRF Hardware)","category":"IoT","level":"Intermediate","score":50,"years":3,"keywords":"power-profiling,nrf","details":"Energy usage measurement and optimization on nRF hardware"},
+  {"skill":"C (OpenWRT IoT Gateways)","category":"IoT","level":"Intermediate","score":50,"years":3,"keywords":"c,openwrt,iot","details":"C programming on OpenWRT-based IoT gateways"},
+  {"skill":"Python (IoT Gateway)","category":"IoT","level":"Advanced","score":75,"years":3,"keywords":"python,iot,gateway","details":"Python scripting and services on IoT gateways"}
+]
