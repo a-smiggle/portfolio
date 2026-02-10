@@ -7,6 +7,7 @@ import { IconButton } from "@/components/ui/icon-button";
 import { Hamburger } from "@/components/ui/hamburger";
 import { FiSun, FiMoon, FiGithub, FiLinkedin } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import Particles from "@/components/Particles";
 
 const GITHUB_URL = "https://github.com/a-smiggle";
 const LINKEDIN_URL = "https://www.linkedin.com/in/anthonysmigielski/";
@@ -20,7 +21,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
 
 export default function RootLayout({
   children,
@@ -49,11 +49,15 @@ export default function RootLayout({
   const handleMenuToggle = () => setMenuOpen((open) => !open);
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <Navbar>
           <div className="flex items-center w-full h-16">
             {/* Branding */}
-            <div className="flex-none font-bold text-lg px-4 select-none">Anthony Smigielski</div>
+            <div className="flex-none font-bold text-lg px-4 select-none">
+              Anthony Smigielski
+            </div>
             {/* Desktop Nav */}
             <div className="hidden md:flex flex-1 justify-end">
               <nav className="flex gap-2 items-center">
@@ -130,7 +134,10 @@ export default function RootLayout({
           </div>
           {/* Mobile Menu Overlay */}
           {menuOpen && (
-            <div className="fixed inset-0 z-40 bg-black/40 dark:bg-black/60 md:hidden" onClick={handleMenuToggle} />
+            <div
+              className="fixed inset-0 z-40 bg-black/40 dark:bg-black/60 md:hidden"
+              onClick={handleMenuToggle}
+            />
           )}
           <div
             className={
@@ -139,27 +146,75 @@ export default function RootLayout({
                 : "hidden"
             }
           >
-            <Button asChild variant="ghost" size="lg" className="w-11/12" onClick={handleMenuToggle}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="w-11/12"
+              onClick={handleMenuToggle}
+            >
               <a href="#overview">Overview</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="w-11/12" onClick={handleMenuToggle}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="w-11/12"
+              onClick={handleMenuToggle}
+            >
               <a href="#skills">Skills</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="w-11/12" onClick={handleMenuToggle}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="w-11/12"
+              onClick={handleMenuToggle}
+            >
               <a href="#education-certs">Education/Certs</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="w-11/12" onClick={handleMenuToggle}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="w-11/12"
+              onClick={handleMenuToggle}
+            >
               <a href="#job-timeline">Job Timeline</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="w-11/12" onClick={handleMenuToggle}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="w-11/12"
+              onClick={handleMenuToggle}
+            >
               <a href="#job-details">Job Details</a>
             </Button>
-            <Button asChild variant="ghost" size="lg" className="w-11/12" onClick={handleMenuToggle}>
+            <Button
+              asChild
+              variant="ghost"
+              size="lg"
+              className="w-11/12"
+              onClick={handleMenuToggle}
+            >
               <a href="#portfolio">Portfolio</a>
             </Button>
           </div>
         </Navbar>
         {children}
+        <Particles
+          key={isDark ? "dark" : "light"}
+          useThemeColors
+          particleCount={1000}
+          particleSpread={50}
+          speed={0.1}
+          particleBaseSize={400}
+          moveParticlesOnHover
+          alphaParticles={false}
+          disableRotation={false}
+          pixelRatio={1}
+        />
       </body>
     </html>
   );
