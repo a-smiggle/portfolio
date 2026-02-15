@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import dynamic from "next/dynamic";
 import { getEmploymentTypeColor as typeColor } from "@/lib/job-colors";
 const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
@@ -18,12 +18,30 @@ type Job = {
 
 export default function JobGantt({ jobs }: { jobs: Job[] }) {
   const [isDark, setIsDark] = useState<boolean>(false);
+  const [inView, setInView] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const update = () => setIsDark(document.documentElement.classList.contains("dark"));
     update();
     const observer = new MutationObserver(update);
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          setInView(true);
+          io.disconnect();
+          break;
+        }
+      }
+    }, { rootMargin: "100px" });
+    io.observe(el);
+    return () => io.disconnect();
   }, []);
 
   const now = useMemo(() => new Date().getTime(), []);
@@ -65,5 +83,11 @@ export default function JobGantt({ jobs }: { jobs: Job[] }) {
     },
   }), [isDark, minStart, maxEnd, series, sorted]);
 
-  return <ReactApexChart options={options} series={series as unknown as number[]} type="rangeBar" height={288} />;
+  return (
+    <div ref={containerRef} className="w-full h-full">
+      {inView ? (
+        <ReactApexChart options={options} series={series as unknown as number[]} type="rangeBar" height={288} />
+      ) : null}
+    </div>
+  );
 }

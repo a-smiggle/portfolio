@@ -7,7 +7,8 @@ import { IconButton } from "@/components/ui/icon-button";
 import { Hamburger } from "@/components/ui/hamburger";
 import { FiSun, FiMoon, FiGithub, FiLinkedin } from "react-icons/fi";
 import { useEffect, useState } from "react";
-import Particles from "@/components/Particles";
+import dynamic from "next/dynamic";
+const LazyParticles = dynamic(() => import("@/components/Particles"), { ssr: false });
 
 const GITHUB_URL = "https://github.com/a-smiggle";
 const LINKEDIN_URL = "https://www.linkedin.com/in/anthonysmigielski/";
@@ -47,6 +48,14 @@ export default function RootLayout({
     });
   };
   const handleMenuToggle = () => setMenuOpen((open) => !open);
+  const [enableParticles, setEnableParticles] = useState(false);
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+    // Defer background effect to idle time to avoid blocking main thread
+    const id = setTimeout(() => setEnableParticles(true), 1500);
+    return () => clearTimeout(id);
+  }, []);
   return (
     <html lang="en">
       <body
@@ -203,18 +212,20 @@ export default function RootLayout({
           </div>
         </Navbar>
         {children}
-        <Particles
-          key={isDark ? "dark" : "light"}
-          useThemeColors
-          particleCount={1000}
-          particleSpread={50}
-          speed={0.1}
-          particleBaseSize={400}
-          moveParticlesOnHover
-          alphaParticles={false}
-          disableRotation={false}
-          pixelRatio={1}
-        />
+        {enableParticles ? (
+          <LazyParticles
+            key={isDark ? "dark" : "light"}
+            useThemeColors
+            particleCount={200}
+            particleSpread={30}
+            speed={0.08}
+            particleBaseSize={120}
+            moveParticlesOnHover={false}
+            alphaParticles={false}
+            disableRotation={false}
+            pixelRatio={1}
+          />
+        ) : null}
       </body>
     </html>
   );

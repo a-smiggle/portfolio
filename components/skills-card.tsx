@@ -1,9 +1,7 @@
 "use client";
-import { useMemo, useState, useEffect, useRef } from "react";
+import { useMemo, useState, useEffect } from "react";
 import levelColors from "@/data/skill_colors.json";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import dynamic from "next/dynamic";
-const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 type Skill = {
   skill: string;
@@ -20,42 +18,31 @@ function SkillPie({ skill }: { skill: Skill }) {
   const lc = (typeof skill.level === "string" && (levelColors as any)[skill.level]) || null;
   const fgColor = lc?.fg || "#3b82f6";
   const bgColor = lc?.remainder || "rgba(148,163,184,0.25)";
-  const [isDark, setIsDark] = useState<boolean>(false);
 
-  useEffect(() => {
-    const update = () => setIsDark(document.documentElement.classList.contains("dark"));
-    update();
-    const observer = new MutationObserver(update);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
-  }, []);
-
-  const options = useMemo(() => ({
-    chart: { type: "donut", background: "transparent", animations: { enabled: false }, toolbar: { show: false } },
-    theme: { mode: isDark ? "dark" : "light" },
-    legend: { show: false },
-    labels: [skill.skill, "Remaining"],
-    dataLabels: { enabled: false },
-    stroke: { show: false, width: 0, colors: ["transparent"] },
-    plotOptions: {
-      pie: {
-        donut: {
-          size: "60%",
-        },
-      },
-    },
-    colors: [fgColor, bgColor],
-  }), [isDark, fgColor, bgColor, skill.skill]);
-
-  const series = useMemo(() => [score, 100 - score], [score]);
+  const size = 96;
+  const stroke = 10;
+  const r = (size - stroke) / 2; // radius
+  const c = 2 * Math.PI * r; // circumference
+  const progress = (score / 100) * c;
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <div className="relative w-24 h-24">
-        <ReactApexChart options={options as any} series={series} type="donut" width={96} height={96} />
-        <div className="absolute inset-0 flex items-center justify-center text-xs font-semibold">
-          {Math.round(score)}%
-        </div>
+      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="block">
+        <g transform={`translate(${size / 2}, ${size / 2})`}>
+          <circle r={r} fill="none" stroke={bgColor} strokeWidth={stroke} />
+          <circle
+            r={r}
+            fill="none"
+            stroke={fgColor}
+            strokeWidth={stroke}
+            strokeLinecap="round"
+            strokeDasharray={`${progress} ${c - progress}`}
+            transform="rotate(-90)"
+          />
+        </g>
+      </svg>
+      <div className="-mt-24 h-24 w-24 flex items-center justify-center text-xs font-semibold select-none">
+        {Math.round(score)}%
       </div>
       <div className="text-xs text-center">
         <div className="font-medium">{skill.skill}</div>
