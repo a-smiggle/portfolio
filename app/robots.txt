@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anthony.smigielski.com.au/sitemap.xml
