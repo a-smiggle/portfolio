@@ -1,3 +1,4 @@
 [
-  {"title":"Example Project","description":"Short description","github_url":"https://github.com/","tags":"nextjs,typescript", "image":"example.jpg"}
+  {"title":"Ruuvitag - Zephy OS FW","description":"Zephyr OS FW for Ruuvitags","github_url":"https://github.com/a-smiggle/ruuvitag_fw_zephyr","tags":"C,Zephyr OS, BLE", "image":"example.jpg"},
+  {"title":"Linux BLE Gateway","description":"Bluetooth Low Energy Gateway for linux devices, such as a raspberry pi.","github_url":"https://github.com/a-smiggle/ble-gateway","tags":"Python, BLE", "image":"example.jpg"}
 ]
