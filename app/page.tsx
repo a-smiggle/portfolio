@@ -4,6 +4,7 @@ import { getSkills, getEducation, getCertifications, getJobs, getJobDetails, get
 import SkillsCard from "@/components/skills-card";
 import JobGantt from "@/components/job-gantt";
 import { getEmploymentTypeColor as typeColor } from "@/lib/job-colors";
+import type { Metadata } from "next";
 // Local types for data models
 type Education = {
   institution: string;
@@ -43,6 +44,29 @@ type PortfolioItem = {
   github_url: string;
   tags?: string;
   image?: string;
+};
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://anthony.smigielski.com.au"),
+  title: "Anthony Smigielski | Data & Business Analyst (Perth • Remote)",
+  description:
+    "Data & Business Analyst specializing in Power BI, SQL, and end-to-end analytics platforms for mining operations. Open to roles in Perth or remote.",
+  robots: { index: true, follow: true },
+  alternates: { canonical: "https://anthony.smigielski.com.au" },
+  openGraph: {
+    type: "website",
+    url: "https://anthony.smigielski.com.au",
+    siteName: "Anthony Smigielski",
+    title: "Anthony Smigielski | Data & Business Analyst (Perth • Remote)",
+    description:
+      "Data & Business Analyst specializing in Power BI, SQL, and end-to-end analytics platforms for mining operations. Open to roles in Perth or remote.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Anthony Smigielski | Data & Business Analyst (Perth • Remote)",
+    description:
+      "Data & Business Analyst specializing in Power BI, SQL, and end-to-end analytics platforms for mining operations. Open to roles in Perth or remote.",
+  },
 };
 
 export default async function Home() {

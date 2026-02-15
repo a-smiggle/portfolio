@@ -50,27 +50,6 @@ export default function Head() {
 
   return (
     <>
-      <title>{TITLE}</title>
-      <meta name="description" content={DESCRIPTION} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="Anthony Smigielski" />
-      <meta name="robots" content="index, follow" />
-
-      {/* Canonical */}
-      <link rel="canonical" href={SITE_URL} />
-
-      {/* Open Graph */}
-      <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Anthony Smigielski" />
-      <meta property="og:title" content={TITLE} />
-      <meta property="og:description" content={DESCRIPTION} />
-      <meta property="og:url" content={SITE_URL} />
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={TITLE} />
-      <meta name="twitter:description" content={DESCRIPTION} />
-
       {/* JSON-LD Person Schema */}
       <script
         type="application/ld+json"
